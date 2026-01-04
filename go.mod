@@ -1,3 +1,3 @@
-module Golang-Info
+module github.com/sha1shwat/Golang-Info
 
-go 1.25
+go 1.22.2

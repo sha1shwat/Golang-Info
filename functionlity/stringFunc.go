@@ -22,9 +22,3 @@ func StringFuc() {
 	p("ToLower:   ", s.ToLower("TEST"))
 	p("ToUpper:   ", s.ToUpper("test"))
 }
-
-func main() {
-
-	StringFuc()
-
-}
