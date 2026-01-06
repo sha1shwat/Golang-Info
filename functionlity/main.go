@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	//StringFuc()
 	//formattingFunc()
@@ -15,5 +17,7 @@ func main() {
 	//fmt.Println(heap.Pop(h)) // 2
 	//fmt.Println(heap.Pop(h)) // 3
 
-	fileHandler("functionlity/file_input.txt")
+	//fileHandler("functionlity/file_input.txt")
+
+	fmt.Println(getCapitalByCountry())
 }
