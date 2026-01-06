@@ -19,5 +19,5 @@ func main() {
 
 	//fileHandler("functionlity/file_input.txt")
 
-	fmt.Println(getCapitalByCountry())
+	fmt.Println(clientWithHeaders())
 }

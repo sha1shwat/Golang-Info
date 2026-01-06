@@ -73,3 +73,39 @@ func getCapitalByCountry() []Country {
 	return ans
 
 }
+
+func clientWithHeaders() []Country {
+	client := &http.Client{
+		Timeout: 5 * time.Second,
+	}
+
+	req, err := http.NewRequest(
+		http.MethodGet,
+		fmt.Sprintf(url, 2011, 1, 1),
+		nil,
+	)
+	if err != nil {
+		fmt.Println(err)
+		return nil
+	}
+
+	// Add headers
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("Authorization", "Bearer <token>")
+	req.Header.Set("X-Custom-Header", "value")
+
+	resp, err := client.Do(req)
+	if err != nil {
+		fmt.Println(err)
+		return nil
+	}
+	defer resp.Body.Close()
+
+	var apiResponse ApiResponse
+	if err := json.NewDecoder(resp.Body).Decode(&apiResponse); err != nil {
+		fmt.Println(err)
+		return nil
+	}
+	return apiResponse.Data
+
+}
